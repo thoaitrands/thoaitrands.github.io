@@ -74,3 +74,46 @@ created with *[Asciiflow Guide](https://asciiflow.com/)*.
     docker-compose up telegraf 
 
 telegraf is a service name of docker-compose.
+
+### Docker-compose
+
+    version: "3.5" 
+    services: 
+        influxdb2: 
+            image: influxdb:latest 
+            network_mode: "bridge" 
+            container_name: influxdb2 
+            ports: 
+                - "8086:8086" 
+            volumes: 
+                - ./influxdbv2/data:/var/lib/influxdb2 
+                - ./influxdbv2/config:/etc/influxdb2 
+            environment: 
+                - DOCKER_INFLUXDB_INIT_MODE=setup 
+                - DOCKER_INFLUXDB_INIT_USERNAME=userInfluxdb
+                - DOCKER_INFLUXDB_INIT_PASSWORD=passWordInfluxdb
+                - DOCKER_INFLUXDB_INIT_ORG=orgName
+                - DOCKER_INFLUXDB_INIT_BUCKET=buketName
+                - DOCKER_INFLUXDB_INIT_RETENTION=1w 
+                - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=anyString
+            restart: always 
+        telegraf: 
+            image: telegraf:latest 
+            network_mode: "bridge" 
+            pid: "host" 
+            container_name: telegraf 
+            ports: 
+                - "8092:8092" 
+                - "8094:8094" 
+                - "8125:8125" 
+            volumes: 
+                - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro 
+                - /var/run/docker.sock:/var/run/docker.sock:ro 
+                - /sys:/host/sys:ro 
+                - /proc:/host/proc:ro 
+                - /etc:/host/etc:ro 
+            environment: 
+                - HOST_PROC=/host/proc 
+                - HOST_SYS=/host/sys 
+                - HOST_ETC=/host/etc 
+            restart: always
