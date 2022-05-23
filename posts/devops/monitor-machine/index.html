@@ -4,7 +4,7 @@
 <a href=/about>About</a>
 <a href=/tags>Tags</a>
 | <a id=dark-mode-toggle onclick=toggleTheme() href></a>
-<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>How to monitoring all machines ?</h1><div class=meta>Posted on May 19, 2022</div></div><section class=body><h2 id=mornitoring>Mornitoring</h2><h2 id=grafana---influxdb2---telegraf>Grafana - Influxdb2 - Telegraf</h2><h3 id=context>Context</h3><pre><code>                   +-----------------------------+ 
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>How to monitoring all machines ?</h1><div class=meta>Posted on May 19, 2022</div></div><section class=body><h2 id=mornitoring>Mornitoring</h2><h2 id=grafana---influxdb2---telegraf>Grafana - Influxdb2 - Telegraf</h2><p><strong>Telegraf</strong> is an agent responsible for gathering and aggregating data, like the current CPU usage for example.<br><strong>InfluxDB</strong> will store data, and expose it to Grafana.<br><strong>Grafana</strong> is a modern dashboarding solution.</p><h3 id=context>Context</h3><pre><code>                   +-----------------------------+ 
                    |                             | 
                    |                             | 
                    |          GRAFANA            | 
@@ -49,8 +49,8 @@ DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=
     organization = DOCKER_INFLUXDB_INIT_ORG 
     bucket = DOCKER_INFLUXDB_INIT_BUCKET 
 </code></pre><p>3: Run docker-compose in mornitoring folder. <em><strong>If you don&rsquo;t have influxdb server</strong></em></p><pre><code>docker-compose up -d 
-</code></pre><p>4: Run docker-compose inmornitoring folder. <em><strong>If you already have influxdb server, you just install telegraf server</strong></em></p><pre><code>docker-compose up telegraf 
-</code></pre><p>telegraf is a service name of docker-compose.</p><h3 id=docker-compose>Docker-compose</h3><pre><code>version: &quot;3.5&quot; 
+</code></pre><p>4: Run docker-compose in mornitoring folder. <em><strong>If you already have influxdb server, you just install telegraf server</strong></em></p><pre><code>docker-compose up telegraf 
+</code></pre><p><strong>telegraf</strong> is a service name of docker-compose.</p><p><strong>Special case</strong>: If you want to install telegraf in Windows server (or your windows can not use docker), please refer this document:<br>How to install telegraf in windows server <a href=https://github.com/influxdata/telegraf/blob/master/docs/WINDOWS_SERVICE.md>Click me !</a>.</p><h3 id=docker-compose>Docker-compose</h3><pre><code>version: &quot;3.5&quot; 
 services: 
     influxdb2: 
         image: influxdb:latest 
