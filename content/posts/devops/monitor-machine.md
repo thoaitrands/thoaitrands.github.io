@@ -8,6 +8,10 @@ tags: [Grafana, Influxdb2, Telegraf]
 ## Mornitoring
 
 ## Grafana - Influxdb2 - Telegraf
+**Telegraf** is an agent responsible for gathering and aggregating data, like the current CPU usage for example.   
+**InfluxDB** will store data, and expose it to Grafana.    
+**Grafana** is a modern dashboarding solution.    
+
 
 ### Context
 
@@ -69,11 +73,14 @@ created with *[Asciiflow Guide](https://asciiflow.com/)*.
 
     docker-compose up -d 
 
-4: Run docker-compose inmornitoring folder. ***If you already have influxdb server, you just install telegraf server***
+4: Run docker-compose in mornitoring folder. ***If you already have influxdb server, you just install telegraf server***
 
     docker-compose up telegraf 
 
-telegraf is a service name of docker-compose.
+**telegraf** is a service name of docker-compose.
+
+**Special case**: If you want to install telegraf in Windows server (or your windows can not use docker), please refer this document:  
+How to install telegraf in windows server [Click me !](https://github.com/influxdata/telegraf/blob/master/docs/WINDOWS_SERVICE.md).
 
 ### Docker-compose
 
