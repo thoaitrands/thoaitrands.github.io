@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>How to use pipenv ? - Devopsbasic</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Pipenv is a packaging tool for Python that solves some common problems associated..."><meta property="og:image" content><meta property="og:title" content="How to use pipenv ?"><meta property="og:description" content="Pipenv is a packaging tool for Python that solves some common problems associated..."><meta property="og:type" content="article"><meta property="og:url" content="https://thoaitrands.github.io/posts/python/pipenv-begin/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-06-01T12:13:32+05:30"><meta property="article:modified_time" content="2022-06-01T12:13:32+05:30"><meta name=twitter:card content="summary"><meta name=twitter:title content="How to use pipenv ?"><meta name=twitter:description content="Pipenv is a packaging tool for Python that solves some common problems associated..."><script src=https://thoaitrands.github.io/js/feather.min.js></script>
+<link href=https://thoaitrands.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://thoaitrands.github.io/css/main.40ca3a860425083862b7ebd55447caec5c4384573f0cb098b8d06a91e8dace2e.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://thoaitrands.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled></head><body><div class=content><header><div class=main><a href=https://thoaitrands.github.io/>Devopsbasic</a></div><nav><a href=/>Home</a>
+<a href=/posts>All posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <a id=dark-mode-toggle onclick=toggleTheme() href></a>
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>How to use pipenv ?</h1><div class=meta>Posted on Jun 1, 2022</div></div><section class=body><h2 id=basic-concepts>Basic Concepts</h2><ol><li><p>Pipenv is a python package manager which gives programmers better control over their pip project dependencies.</p></li><li><p>Pipenv allows you to select the specific version of python, and the versions of the pip packages required.</p></li><li><p>For those that are familiar with JavaScript development, pipenv can be thought of as the python equivalent of npm.</p></li></ol><h2 id=how-to-install-pipenv>How to install pipenv</h2><pre><code>pip install --user pipenv
+//
+pip3 install --user pipenv
+----------------------------
+OR UPDATE
+pip install --user --upgrade pipenv
+//
+pip3 install --user --upgrade pipenv
+</code></pre><p>Note: If you have issue <code>zsh: command not found: pipenv</code>.</p><p>Calm down and execute this command.</p><pre><code>sudo -H pip install -U pipenv
+</code></pre><h2 id=how-to-understand-pipenv>How to <strong>UNDERSTAND</strong> pipenv</h2><p>Create a new project (new folder), It can be empty.<br>In this case, we will create a new project with name==first_pipenv</p><pre><code>cd first_pipenv  
+pipenv install requests
+</code></pre><p>In this step, we will create a new environment.<br>And in new environment, we also installed <code>request</code> package.</p><p>In this folder==first_pipenv, we can see the 2 files:</p><ol><li><p><strong>Pipfile</strong></p><ul><li>It will be auto generated with command <code>pipenv install</code>.</li><li>It will be auto input the <code>request</code> package.</li></ul><p><strong>Example</strong>
+[[source]]
+url = &ldquo;<a href=https://pypi.org/simple%22>https://pypi.org/simple"</a>
+verify_ssl = true
+name = &ldquo;pypi&rdquo;</p><pre><code> [packages]
+ requests = &quot;~=2.5.0&quot;
+
+ [dev-packages]
+
+ [requires]
+ python_version = &quot;3.9&quot;
+</code></pre></li><li><p><strong>Pipfile.lock</strong></p><ul><li>It will takes advantage of some great new security improvements in pip.</li><li>It will be generated with the sha256 hashes of each downloaded package.</li><li>They highly recommend approaching deployments with promoting projects from a development environment into production.</li></ul><p><strong>Example</strong>
+{
+&ldquo;_meta&rdquo;: {
+&ldquo;hash&rdquo;: {
+&ldquo;sha256&rdquo;: &ldquo;a736cf9dd2af80d1feeff6d44e39c1f78c1b7825370f57af5b87ec82e6a8c724&rdquo;
+},
+&ldquo;pipfile-spec&rdquo;: 6,
+&ldquo;requires&rdquo;: {
+&ldquo;python_version&rdquo;: &ldquo;3.9&rdquo;
+},
+&ldquo;sources&rdquo;: [
+{
+&ldquo;name&rdquo;: &ldquo;pypi&rdquo;,
+&ldquo;url&rdquo;: &ldquo;https://pypi.org/simple&rdquo;,
+&ldquo;verify_ssl&rdquo;: true
+}
+]
+},
+&ldquo;default&rdquo;: {
+&ldquo;requests&rdquo;: {
+&ldquo;hashes&rdquo;: [
+&ldquo;sha256:3e66d7ba78e7a6a8eccd2e901079ab8d24e408b5375cf32eb51f291306302418&rdquo;,
+&ldquo;sha256:55d7f5619daae94ec49ee81ed8c865e5a2a47f0bbf8e06cf94636bee103eaf65&rdquo;
+],
+&ldquo;index&rdquo;: &ldquo;pypi&rdquo;,
+&ldquo;version&rdquo;: &ldquo;==2.5.3&rdquo;
+}
+},
+&ldquo;develop&rdquo;: {}
+}</p></li></ol><p><em><strong>NOTE</strong></em></p><ol><li>If you change the version or something in <code>Pipfile</code>. Then you must execute the command <code>pipenv install</code> to update the <code>Pipfile.lock</code>.</li><li>If you want to install 20 packages in your environment. You will execute list command:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>    pipenv install package_A
+</span></span><span style=display:flex><span>    pipenv install package_B
+</span></span><span style=display:flex><span>    pipenv install package_C
+</span></span><span style=display:flex><span>    pipenv install .........
+</span></span></code></pre></div></li></ol><p>This is stupid solution.</p><p>And you just add list packages in the <code>Pipfile</code> &mdash;> execute the command <code>pipenv install</code> &mdash;> everything <strong>DONE</strong></p><h2 id=how-to-known-you-are-a-superman>How to <strong>KNOWN</strong> You are a superman</h2><p>It&rsquo;s mean how to know your new environment is correct ?
+We have more method to check it.</p><p><strong>Exampl:</strong></p><pre><code>pipenv run pip freeze
+//output
+requests==2.5.3
+
+pipenv shell ## you already exec the new environment
+pip freeze
+//output
+requests==2.5.3
+</code></pre><p><em><strong>IT&rsquo;s OK</strong></em>
+Thanks for your reading. I hope it&rsquo;s useful to you.</p><p><strong>Document to more detail <em><a href=https://pipenv-fork.readthedocs.io/en/latest/basics.html>Pipenv</a></em>.</strong></p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/python>python</a></li><li><a href=/tags/pipenv>pipenv</a></li></ul></nav></div></article></main><footer><div style=display:flex><a class=soc href=https://github.com/thoaitrands title=GitHub><i data-feather=github></i></a></div><div class=footer-info>2022 © Thor | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer><script>feather.replace()</script></div></body></html>

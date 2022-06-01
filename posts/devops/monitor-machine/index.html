@@ -4,7 +4,7 @@
 <a href=/about>About</a>
 <a href=/tags>Tags</a>
 | <a id=dark-mode-toggle onclick=toggleTheme() href></a>
-<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>How to monitoring all machines ?</h1><div class=meta>Posted on May 19, 2022</div></div><section class=body><h2 id=mornitoring>Mornitoring</h2><h2 id=grafana---influxdb2---telegraf>Grafana - Influxdb2 - Telegraf</h2><p><strong>Telegraf</strong> is an agent responsible for gathering and aggregating data, like the current CPU usage for example.<br><strong>InfluxDB</strong> will store data, and expose it to Grafana.<br><strong>Grafana</strong> is a modern dashboarding solution.</p><h3 id=context>Context</h3><pre><code>                   +-----------------------------+ 
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>How to monitoring all machines ?</h1><div class=meta>Posted on May 19, 2022</div></div><section class=body><h2 id=mornitoring>Mornitoring</h2><h2 id=grafana---influxdb2---telegraf>Grafana - Influxdb2 - Telegraf</h2><p><strong>Telegraf</strong> is an agent responsible for gathering and aggregating data, like the current CPU usage for example.</p><p><strong>InfluxDB</strong> will store data, and expose it to Grafana.</p><p><strong>Grafana</strong> is a modern dashboarding solution.</p><h3 id=context>Context</h3><pre><code>                   +-----------------------------+ 
                    |                             | 
                    |                             | 
                    |          GRAFANA            | 
@@ -63,12 +63,12 @@ services:
             - ./influxdbv2/config:/etc/influxdb2 
         environment: 
             - DOCKER_INFLUXDB_INIT_MODE=setup 
-            - DOCKER_INFLUXDB_INIT_USERNAME=userInfluxdb
-            - DOCKER_INFLUXDB_INIT_PASSWORD=passWordInfluxdb
-            - DOCKER_INFLUXDB_INIT_ORG=orgName
-            - DOCKER_INFLUXDB_INIT_BUCKET=buketName
+            - DOCKER_INFLUXDB_INIT_USERNAME=${DOCKER_INFLUXDB_INIT_USERNAME}
+            - DOCKER_INFLUXDB_INIT_PASSWORD=${DOCKER_INFLUXDB_INIT_PASSWORD}
+            - DOCKER_INFLUXDB_INIT_ORG=${DOCKER_INFLUXDB_INIT_ORG}
+            - DOCKER_INFLUXDB_INIT_BUCKET=${DOCKER_INFLUXDB_INIT_BUCKET}
             - DOCKER_INFLUXDB_INIT_RETENTION=1w 
-            - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=anyString
+            - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${DOCKER_INFLUXDB_INIT_ADMIN_TOKEN}
         restart: always 
     telegraf: 
         image: telegraf:latest 
@@ -89,5 +89,15 @@ services:
             - HOST_PROC=/host/proc 
             - HOST_SYS=/host/sys 
             - HOST_ETC=/host/etc 
+        restart: always
+</code></pre><h3 id=docker-compose-for-grafana8>Docker-compose for Grafana8</h3><pre><code>version: &quot;3.5&quot;
+services:
+    grafana8:
+        image: grafana/grafana:latest
+        container_name: grafana8
+        volumes:
+        - ./data:/var/lib/grafana
+        ports:
+        - &quot;3000:3000&quot;
         restart: always
 </code></pre></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/grafana>Grafana</a></li><li><a href=/tags/influxdb2>Influxdb2</a></li><li><a href=/tags/telegraf>Telegraf</a></li></ul></nav></div></article></main><footer><div style=display:flex><a class=soc href=https://github.com/thoaitrands title=GitHub><i data-feather=github></i></a></div><div class=footer-info>2022 © Thor | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer><script>feather.replace()</script></div></body></html>
