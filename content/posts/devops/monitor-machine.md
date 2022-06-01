@@ -8,10 +8,12 @@ tags: [Grafana, Influxdb2, Telegraf]
 ## Mornitoring
 
 ## Grafana - Influxdb2 - Telegraf
-**Telegraf** is an agent responsible for gathering and aggregating data, like the current CPU usage for example.   
-**InfluxDB** will store data, and expose it to Grafana.    
-**Grafana** is a modern dashboarding solution.    
 
+**Telegraf** is an agent responsible for gathering and aggregating data, like the current CPU usage for example.
+
+**InfluxDB** will store data, and expose it to Grafana.
+
+**Grafana** is a modern dashboarding solution.
 
 ### Context
 
@@ -97,12 +99,12 @@ How to install telegraf in windows server [Click me !](https://github.com/influx
                 - ./influxdbv2/config:/etc/influxdb2 
             environment: 
                 - DOCKER_INFLUXDB_INIT_MODE=setup 
-                - DOCKER_INFLUXDB_INIT_USERNAME=userInfluxdb
-                - DOCKER_INFLUXDB_INIT_PASSWORD=passWordInfluxdb
-                - DOCKER_INFLUXDB_INIT_ORG=orgName
-                - DOCKER_INFLUXDB_INIT_BUCKET=buketName
+                - DOCKER_INFLUXDB_INIT_USERNAME=${DOCKER_INFLUXDB_INIT_USERNAME}
+                - DOCKER_INFLUXDB_INIT_PASSWORD=${DOCKER_INFLUXDB_INIT_PASSWORD}
+                - DOCKER_INFLUXDB_INIT_ORG=${DOCKER_INFLUXDB_INIT_ORG}
+                - DOCKER_INFLUXDB_INIT_BUCKET=${DOCKER_INFLUXDB_INIT_BUCKET}
                 - DOCKER_INFLUXDB_INIT_RETENTION=1w 
-                - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=anyString
+                - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${DOCKER_INFLUXDB_INIT_ADMIN_TOKEN}
             restart: always 
         telegraf: 
             image: telegraf:latest 
@@ -124,3 +126,17 @@ How to install telegraf in windows server [Click me !](https://github.com/influx
                 - HOST_SYS=/host/sys 
                 - HOST_ETC=/host/etc 
             restart: always
+
+### Docker-compose for Grafana8
+
+    version: "3.5"
+    services:
+        grafana8:
+            image: grafana/grafana:latest
+            container_name: grafana8
+            volumes:
+            - ./data:/var/lib/grafana
+            ports:
+            - "3000:3000"
+            restart: always
+
