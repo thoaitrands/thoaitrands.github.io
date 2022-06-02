@@ -15,47 +15,48 @@ pip3 install --user --upgrade pipenv
 </code></pre><p>Note: If you have issue <code>zsh: command not found: pipenv</code>.</p><p>Calm down and execute this command.</p><pre><code>sudo -H pip install -U pipenv
 </code></pre><h2 id=how-to-understand-pipenv>How to <strong>UNDERSTAND</strong> pipenv</h2><p>Create a new project (new folder), It can be empty.<br>In this case, we will create a new project with name==first_pipenv</p><pre><code>cd first_pipenv  
 pipenv install requests
-</code></pre><p>In this step, we will create a new environment.<br>And in new environment, we also installed <code>request</code> package.</p><p>In this folder==first_pipenv, we can see the 2 files:</p><ol><li><p><strong>Pipfile</strong></p><ul><li>It will be auto generated with command <code>pipenv install</code>.</li><li>It will be auto input the <code>request</code> package.</li></ul><p><strong>Example</strong>
-[[source]]
-url = &ldquo;<a href=https://pypi.org/simple%22>https://pypi.org/simple"</a>
-verify_ssl = true
-name = &ldquo;pypi&rdquo;</p><pre><code> [packages]
+</code></pre><p>In this step, we will create a new environment.<br>And in new environment, we also installed <code>request</code> package.</p><p>In this folder==first_pipenv, we can see the 2 files:</p><ol><li><p><strong>Pipfile</strong></p><ul><li>It will be auto generated with command <code>pipenv install</code>.</li><li>It will be auto input the <code>request</code> package.</li></ul><p><strong>Example</strong></p><pre><code> [[source]]
+ url = &quot;https://pypi.org/simple&quot;
+ verify_ssl = true
+ name = &quot;pypi&quot;
+
+ [packages]
  requests = &quot;~=2.5.0&quot;
 
  [dev-packages]
 
  [requires]
  python_version = &quot;3.9&quot;
-</code></pre></li><li><p><strong>Pipfile.lock</strong></p><ul><li>It will takes advantage of some great new security improvements in pip.</li><li>It will be generated with the sha256 hashes of each downloaded package.</li><li>They highly recommend approaching deployments with promoting projects from a development environment into production.</li></ul><p><strong>Example</strong>
-{
-&ldquo;_meta&rdquo;: {
-&ldquo;hash&rdquo;: {
-&ldquo;sha256&rdquo;: &ldquo;a736cf9dd2af80d1feeff6d44e39c1f78c1b7825370f57af5b87ec82e6a8c724&rdquo;
-},
-&ldquo;pipfile-spec&rdquo;: 6,
-&ldquo;requires&rdquo;: {
-&ldquo;python_version&rdquo;: &ldquo;3.9&rdquo;
-},
-&ldquo;sources&rdquo;: [
-{
-&ldquo;name&rdquo;: &ldquo;pypi&rdquo;,
-&ldquo;url&rdquo;: &ldquo;https://pypi.org/simple&rdquo;,
-&ldquo;verify_ssl&rdquo;: true
-}
-]
-},
-&ldquo;default&rdquo;: {
-&ldquo;requests&rdquo;: {
-&ldquo;hashes&rdquo;: [
-&ldquo;sha256:3e66d7ba78e7a6a8eccd2e901079ab8d24e408b5375cf32eb51f291306302418&rdquo;,
-&ldquo;sha256:55d7f5619daae94ec49ee81ed8c865e5a2a47f0bbf8e06cf94636bee103eaf65&rdquo;
-],
-&ldquo;index&rdquo;: &ldquo;pypi&rdquo;,
-&ldquo;version&rdquo;: &ldquo;==2.5.3&rdquo;
-}
-},
-&ldquo;develop&rdquo;: {}
-}</p></li></ol><p><em><strong>NOTE</strong></em></p><ol><li>If you change the version or something in <code>Pipfile</code>. Then you must execute the command <code>pipenv install</code> to update the <code>Pipfile.lock</code>.</li><li>If you want to install 20 packages in your environment. You will execute list command:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>    pipenv install package_A
+</code></pre></li><li><p><strong>Pipfile.lock</strong></p><ul><li>It will takes advantage of some great new security improvements in pip.</li><li>It will be generated with the sha256 hashes of each downloaded package.</li><li>They highly recommend approaching deployments with promoting projects from a development environment into production.</li></ul><p><strong>Example</strong></p><pre><code> {
+     &quot;_meta&quot;: {
+         &quot;hash&quot;: {
+             &quot;sha256&quot;: &quot;a736cf9dd2af80d1feeff6d44e39c1f78c1b7825370f57af5b87ec82e6a8c724&quot;
+         },
+         &quot;pipfile-spec&quot;: 6,
+         &quot;requires&quot;: {
+             &quot;python_version&quot;: &quot;3.9&quot;
+         },
+         &quot;sources&quot;: [
+             {
+                 &quot;name&quot;: &quot;pypi&quot;,
+                 &quot;url&quot;: &quot;https://pypi.org/simple&quot;,
+                 &quot;verify_ssl&quot;: true
+             }
+         ]
+     },
+     &quot;default&quot;: {
+         &quot;requests&quot;: {
+             &quot;hashes&quot;: [
+                 &quot;sha256:3e66d7ba78e7a6a8eccd2e901079ab8d24e408b5375cf32eb51f291306302418&quot;,
+                 &quot;sha256:55d7f5619daae94ec49ee81ed8c865e5a2a47f0bbf8e06cf94636bee103eaf65&quot;
+             ],
+             &quot;index&quot;: &quot;pypi&quot;,
+             &quot;version&quot;: &quot;==2.5.3&quot;
+         }
+     },
+     &quot;develop&quot;: {}
+ }
+</code></pre></li></ol><p><em><strong>NOTE</strong></em></p><ol><li>If you change the version or something in <code>Pipfile</code>. Then you must execute the command <code>pipenv install</code> to update the <code>Pipfile.lock</code>.</li><li>If you want to install 20 packages in your environment. You will execute list command:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>    pipenv install package_A
 </span></span><span style=display:flex><span>    pipenv install package_B
 </span></span><span style=display:flex><span>    pipenv install package_C
 </span></span><span style=display:flex><span>    pipenv install .........
