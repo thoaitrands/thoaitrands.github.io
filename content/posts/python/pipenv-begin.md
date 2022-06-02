@@ -49,6 +49,7 @@ In this folder==first_pipenv, we can see the 2 files:
     - It will be auto input the `request` package.
 
     **Example**
+
         [[source]]
         url = "https://pypi.org/simple"
         verify_ssl = true
@@ -69,6 +70,7 @@ In this folder==first_pipenv, we can see the 2 files:
     - They highly recommend approaching deployments with promoting projects from a development environment into production.
 
     **Example**
+
         {
             "_meta": {
                 "hash": {
