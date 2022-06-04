@@ -1,0 +1,85 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Markdown is really EASY...right ? - Devopsbasic</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Grafana, Influxdb2, Telegraf"><meta property="og:image" content><meta property="og:title" content="Markdown is really EASY...right ?"><meta property="og:description" content="Grafana, Influxdb2, Telegraf"><meta property="og:type" content="article"><meta property="og:url" content="https://thoaitrands.github.io/posts/tips/mark-down-begin/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-05-19T12:13:32+05:30"><meta property="article:modified_time" content="2022-05-19T12:13:32+05:30"><meta name=twitter:card content="summary"><meta name=twitter:title content="Markdown is really EASY...right ?"><meta name=twitter:description content="Grafana, Influxdb2, Telegraf"><script src=https://thoaitrands.github.io/js/feather.min.js></script>
+<link href=https://thoaitrands.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://thoaitrands.github.io/css/main.40ca3a860425083862b7ebd55447caec5c4384573f0cb098b8d06a91e8dace2e.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://thoaitrands.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled></head><body><div class=content><header><div class=main><a href=https://thoaitrands.github.io/>Devopsbasic</a></div><nav><a href=/>Home</a>
+<a href=/posts>All posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <a id=dark-mode-toggle onclick=toggleTheme() href></a>
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Markdown is really EASY...right ?</h1><div class=meta>Posted on May 19, 2022</div></div><section class=body><p>Markdown Cheatsheet</p><p>===================</p><hr><h1 id=heading-1>Heading 1</h1><pre><code>Markup :  # Heading 1 #
+
+-OR-
+
+Markup :  ============= (below H1 text)
+</code></pre><h2 id=heading-2>Heading 2</h2><pre><code>Markup :  ## Heading 2 ##
+
+-OR-
+
+Markup: --------------- (below H2 text)
+</code></pre><h3 id=heading-3>Heading 3</h3><pre><code>Markup :  ### Heading 3 ###
+</code></pre><h4 id=heading-4>Heading 4</h4><pre><code>Markup :  #### Heading 4 ####
+</code></pre><p>Common text</p><pre><code>Markup :  Common text
+</code></pre><p><em>Emphasized text</em></p><pre><code>Markup :  _Emphasized text_ or *Emphasized text*
+</code></pre><p><del>Strikethrough text</del></p><pre><code>Markup :  ~~Strikethrough text~~
+</code></pre><p><strong>Strong text</strong></p><pre><code>Markup :  __Strong text__ or **Strong text**
+</code></pre><p><em><strong>Strong emphasized text</strong></em></p><pre><code>Markup :  ___Strong emphasized text___ or ***Strong emphasized text***
+</code></pre><p><a href=http://www.google.fr/ title="Named link title">Named Link</a> and <a href=http://www.google.fr/>http://www.google.fr/</a> or <a href=http://example.com/>http://example.com/</a></p><pre><code>Markup :  [Named Link](http://www.google.fr/ &quot;Named link title&quot;) and http://www.google.fr/ or &lt;http://example.com/&gt;
+</code></pre><p><a href=#heading-1 title="Goto heading-1">heading-1</a></p><pre><code>Markup: [heading-1](#heading-1 &quot;Goto heading-1&quot;)
+</code></pre><p>Table, like this one :</p><table><thead><tr><th>First Header</th><th>Second Header</th></tr></thead><tbody><tr><td>Content Cell</td><td>Content Cell</td></tr><tr><td>Content Cell</td><td>Content Cell</td></tr></tbody></table><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>First Header  | Second Header
+</span></span><span style=display:flex><span>------------- | -------------
+</span></span><span style=display:flex><span>Content Cell  | Content Cell
+</span></span><span style=display:flex><span>Content Cell  | Content Cell
+</span></span></code></pre></div><p>Adding a pipe <code>|</code> in a cell :</p><table><thead><tr><th>First Header</th><th>Second Header</th></tr></thead><tbody><tr><td>Content Cell</td><td>Content Cell</td></tr><tr><td>Content Cell</td><td>\</td></tr></tbody></table><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>First Header  | Second Header
+</span></span><span style=display:flex><span>------------- | -------------
+</span></span><span style=display:flex><span>Content Cell  | Content Cell
+</span></span><span style=display:flex><span>Content Cell  |  \| 
+</span></span></code></pre></div><p>Left, right and center aligned table</p><table><thead><tr><th style=text-align:left>Left aligned Header</th><th style=text-align:right>Right aligned Header</th><th style=text-align:center>Center aligned Header</th></tr></thead><tbody><tr><td style=text-align:left>Content Cell</td><td style=text-align:right>Content Cell</td><td style=text-align:center>Content Cell</td></tr><tr><td style=text-align:left>Content Cell</td><td style=text-align:right>Content Cell</td><td style=text-align:center>Content Cell</td></tr></tbody></table><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>Left aligned Header | Right aligned Header | Center aligned Header
+</span></span><span style=display:flex><span>| :--- | ---: | :---:
+</span></span><span style=display:flex><span>Content Cell  | Content Cell | Content Cell
+</span></span><span style=display:flex><span>Content Cell  | Content Cell | Content Cell
+</span></span></code></pre></div><p><code>code()</code></p><pre><code>Markup :  `code()`
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>specificLanguage_code</span> <span style=color:#f92672>=</span> 
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;data&#34;</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;lookedUpPlatform&#34;</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;query&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Kasabian+Test+Transmission&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;lookedUpItem&#34;</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;name&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Test Transmission&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;artist&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Kasabian&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;album&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Kasabian&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;picture&#34;</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;link&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;http://open.spotify.com/track/5jhJur5n4fasblLSCOcrTp&#34;</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><ul><li>Bullet list<ul><li>Nested bullet<ul><li>Sub-nested bullet etc</li></ul></li></ul></li><li>Bullet list item 2</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Markup : * Bullet list
+</span></span><span style=display:flex><span>              * Nested bullet
+</span></span><span style=display:flex><span>                  * Sub-nested bullet etc
+</span></span><span style=display:flex><span>          * Bullet list item 2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-OR-
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> Markup : - Bullet list
+</span></span><span style=display:flex><span>              - Nested bullet
+</span></span><span style=display:flex><span>                  - Sub-nested bullet etc
+</span></span><span style=display:flex><span>          - Bullet list item 2 
+</span></span></code></pre></div><ol><li>A numbered list<ol><li>A nested numbered list</li><li>Which is numbered</li></ol></li><li>Which is numbered</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Markup : 1. A numbered list
+</span></span><span style=display:flex><span>              1. A nested numbered list
+</span></span><span style=display:flex><span>              2. Which is numbered
+</span></span><span style=display:flex><span>          2. Which is numbered
+</span></span></code></pre></div><ul><li><input disabled type=checkbox> An uncompleted task</li><li><input checked disabled type=checkbox> A completed task</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Markup : - [ ] An uncompleted task
+</span></span><span style=display:flex><span>          - [x] A completed task
+</span></span></code></pre></div><ul><li><input disabled type=checkbox> An uncompleted task<ul><li><input disabled type=checkbox> A subtask</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Markup : - [ ] An uncompleted task
+</span></span><span style=display:flex><span>              - [ ] A subtask
+</span></span></code></pre></div><blockquote><p>Blockquote</p><blockquote><p>Nested blockquote</p></blockquote></blockquote><pre><code>Markup :  &gt; Blockquote
+          &gt;&gt; Nested Blockquote
+</code></pre><p><em>Horizontal line :</em></p><hr><pre><code>Markup :  - - - -
+</code></pre><p><em>Image with alt :</em></p><p><img src=http://via.placeholder.com/200x150 alt="picture alt" title="Title is optional"></p><pre><code>Markup : ![picture alt](http://via.placeholder.com/200x150 &quot;Title is optional&quot;)
+</code></pre><p>Foldable text:</p><pre><code>Markup : &lt;details&gt;
+           &lt;summary&gt;Title 1&lt;/summary&gt;
+           &lt;p&gt;Content 1 Content 1 Content 1 Content 1 Content 1&lt;/p&gt;
+         &lt;/details&gt;
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>h3</span>&gt;HTML&lt;/<span style=color:#f92672>h3</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>p</span>&gt; Some HTML code here &lt;/<span style=color:#f92672>p</span>&gt;
+</span></span></code></pre></div><p>Link to a specific part of the page:</p><p><a href=#TOP>Go To TOP</a></p><pre><code>Markup : [text goes here](#section_name)
+          section_title&lt;a name=&quot;section_name&quot;&gt;&lt;/a&gt;    
+</code></pre><p><a href=https://github.com/tchapi/markdown-cheatsheet>Source</a></p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/tips>tips</a></li></ul></nav></div></article></main><footer><div style=display:flex><script type=text/javascript src=https://storage.ko-fi.com/cdn/widget/Widget_2.js></script><script type=text/javascript>kofiwidget2.init('Support Me on Ko-fi','#29abe0','C1C4D2VFM'),kofiwidget2.draw()</script>
+<a class=soc href=https://github.com/thoaitrands title=GitHub><i data-feather=github></i></a></div><div class=footer-info>2022 © Thor | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer><script>feather.replace()</script></div></body></html>
