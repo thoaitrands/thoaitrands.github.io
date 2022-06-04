@@ -1,6 +1,8 @@
 <footer>
   <div style="display:flex">
     {{- range $index, $key := .Site.Params.Social -}}
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'C1C4D2VFM');kofiwidget2.draw();</script> 
+
     <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
     {{- end -}}
   </div>
