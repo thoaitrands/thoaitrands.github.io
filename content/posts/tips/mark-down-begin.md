@@ -1,7 +1,7 @@
 ---
 title: "Markdown is really EASY...right ?"
 date: 2022-05-19T12:13:32+05:30
-description: "Grafana, Influxdb2, Telegraf"
+description: "How to become the supper "
 tags: [tips]
 ---
 
