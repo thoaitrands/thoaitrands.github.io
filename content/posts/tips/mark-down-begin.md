@@ -5,7 +5,7 @@ description: "How to become the supper "
 tags: [tips]
 ---
 
-Markdown Cheatsheet<a name="TOP"></a>
+Markdown Cheatsheet <a name="TOP"></a>
 
 ===================
 
@@ -70,12 +70,10 @@ First Header  | Second Header
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
-```
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-```
+    First Header  | Second Header
+    ------------- | -------------
+    Content Cell  | Content Cell
+    Content Cell  | Content Cell
 
 Adding a pipe `|` in a cell :
 
@@ -84,12 +82,10 @@ First Header  | Second Header
 Content Cell  | Content Cell
 Content Cell  | \|
 
-```
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  |  \| 
-```
+    First Header  | Second Header
+    ------------- | -------------
+    Content Cell  | Content Cell
+    Content Cell  |  \| 
 
 Left, right and center aligned table
 
