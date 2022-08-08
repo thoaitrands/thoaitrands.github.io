@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Cruft, CookieCutter for newbie 🌟 - Devopsbasic</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The solution for template project."><meta property="og:image" content><meta property="og:title" content="Cruft, CookieCutter for newbie 🌟"><meta property="og:description" content="The solution for template project."><meta property="og:type" content="article"><meta property="og:url" content="https://thoaitrands.github.io/posts/tips/cruft-begin/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-08-07T00:00:00+07:00"><meta property="article:modified_time" content="2022-08-07T00:00:00+07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Cruft, CookieCutter for newbie 🌟"><meta name=twitter:description content="The solution for template project."><script src=https://thoaitrands.github.io/js/feather.min.js></script>
+<link href=https://thoaitrands.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://thoaitrands.github.io/css/main.40ca3a860425083862b7ebd55447caec5c4384573f0cb098b8d06a91e8dace2e.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://thoaitrands.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled></head><body><div class=content><header><div class=main><a href=https://thoaitrands.github.io/>Devopsbasic</a></div><nav><a href=/>Home</a>
+<a href=/posts>All posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <a id=dark-mode-toggle onclick=toggleTheme() href></a>
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Cruft, CookieCutter for newbie 🌟</h1><div class=meta>Posted on Aug 7, 2022</div></div><section class=body><p>Current issue:</p><pre><code>Currently, we using the Bitbucket server for `Source Code Management`.
+In this your project, you have 10 repositories.
+For each repository is include `shared` folder. It's mean the same folder.
+And now if I want to change something in `shared` folder in repository A0.
+I must change all repositories (from repo A1 --&gt; repo A9) manually. 
+And I must create 9 PRs for this change. 😱😱😱😱.
+</code></pre><p><strong>Solution:</strong></p><pre><code>In this case, we have 2 options:
+    1. Submodule
+    2. Cruft
+And today, I will talk about option 2 - Cruft.
+</code></pre><p>⭐⭐⭐ <strong>Important</strong></p><pre><code>I just introduce about case that we already have existing repositories.
+We have more and more tutorials for case create new repository with this mechanism.
+</code></pre><p>==========================================================================================================</p><hr><h2 id=concept-overview-->Concept overview ## 🍌🍌🍌</h2><p><em><strong>1️⃣ Install the cruft</strong></em></p><p>To get started - install cruft using a Python package manager:</p><pre><code>pip3 install cruft
+OR
+poetry add cruft
+OR
+pipenv install cruft
+</code></pre><p><em><strong>2️⃣ Making the repository to TEMPLATE</strong></em>
+Create folder template include all files need to sharing.</p><pre><code>cookiecutter-component/
+├── {{ cookiecutter.directory_name }}/  &lt;--------- directory template
+│       └── ...
+├── blah.txt                      &lt;--------- Non-templated files/dirs
+│                                            go outside
+│
+└── cookiecutter.json             &lt;--------- Prompts &amp; default values
+</code></pre><p>In <em><strong>cookiecutter.json</strong></em></p><pre><code>{
+    &quot;directory_name&quot;: &quot;shared&quot;
+}
+</code></pre><p><em><strong>&mldr;continus&mldr; waiting</strong></em></p></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/tips>tips</a></li></ul></nav></div></article></main><footer><div style=display:flex><script type=text/javascript src=https://storage.ko-fi.com/cdn/widget/Widget_2.js></script><script type=text/javascript>kofiwidget2.init("Support Me on Ko-fi","#29abe0","C1C4D2VFM"),kofiwidget2.draw()</script>
+<a class=soc href=https://github.com/thoaitrands title=GitHub><i data-feather=github></i></a></div><div class=footer-info>2022 © Thor | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer><script>feather.replace()</script></div></body></html>
