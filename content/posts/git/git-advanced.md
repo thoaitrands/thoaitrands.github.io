@@ -1,24 +1,39 @@
 ---
-title: "Advanced Git Tutorials."
-date: 2022-05-27T12:13:32+05:30
+title: "Git rebase vs git merge ❓❓"
+date: 2022-08-28T12:13:32+05:30
 description: "Git is easy to learn...."
-draft: true
-tags: [git]
+tags: [git_advanced]
 ---
 
-If you’re a developer today, odds are you’ve learned Git, the version control system at the heart of modern software workflows. You know the basics — how repositories work, how to create branches and commit changes, and how to merge those changes and pull requests.
+## Git merge
+    Beta                   `B1` ------------------------> `B2`
+                         /            
+                        /
+    Main: `C1` ---> `C2` ----------> `C3` ---> `C4`
+👉👉👉      `C1` --->`C2` --->`B1` --->`C3`---> `C4` --->`B2`
 
-But sometime you have some issues with it and you need to know some another git command.
+    🐵 Nếu chúng ta merge `Beta` branch vào `main` branch.
 
-## Git git-cherry-pick
+    Sau khi merged, thì `commit history` sẽ được sắp xếp dựa vào thời gian của các commits.
 
-**Issue**  
-    If you are working in branch AAA, and your branch have list commits (a1, a2 and a3). It's mean you have 3 commits in your branch. And your boss want to apply the code of commit a2 to master branch, just all code in commit a2 (no more), maybe commit a2 can fix the bug production **Urgent** 😊😊😊😊.   
-    ========>>>>>>
-**Idea**   
-    *What you will do ????*   
-        1. Create a new branch HOT-FIX.
-        2. Copy all code from commit a2 in branch AAA.  
-        3. Commit and push.  
-        4. Merge branch HOT_FIX to master.  
-        5. Boss, I want a raise salary.  
+    👉 B1 được commit trước C3 và C4
+    👉 B2 commit sau C3 và C3
+    
+    `commit history` sau khi merged sẽ là 👉👉👉 B1 —> C3 —> C4 —>B2
+
+## Git rebase
+    Beta                   `B1` ------------------------> `B2`
+                         /            
+                        /
+    Main: `C1` ---> `C2` ----------> `C3` ---> `C4`
+👉👉👉     `C1` ---> `C2` --->`C3` --->`C4`---> `B1` --->`B2`
+
+    🐵 Đứng ở branch `beta` để rebase branch `main`:
+	  👉 Lấy branch `main` làm cơ sở.
+	  👉 Giữ thứ tự các commits của branch `main`, lấy tất cả các commits của branch `beta` đẩy lên đầu branch `main`
+    `commit history` sau khi merged sẽ là 👉👉👉 C1 —> C2 —> C3 —>CC4 -> B1 ->b2.
+
+## Lợi ích:
+
+    👍 Sau khi 1 branch hoàn thành nên rebase main thay vì merge. 
+    vì các commits của new branch sẽ không xen kẽ với commits của main —> dễ check history.
