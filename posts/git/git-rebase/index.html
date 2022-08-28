@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Git rebase vs git merge ❓❓ - Devopsbasic</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Git is easy to learn...."><meta property="og:image" content><meta property="og:title" content="Git rebase vs git merge ❓❓"><meta property="og:description" content="Git is easy to learn...."><meta property="og:type" content="article"><meta property="og:url" content="https://thoaitrands.github.io/posts/git/git-rebase/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-08-28T12:13:32+05:30"><meta property="article:modified_time" content="2022-08-28T12:13:32+05:30"><meta name=twitter:card content="summary"><meta name=twitter:title content="Git rebase vs git merge ❓❓"><meta name=twitter:description content="Git is easy to learn...."><script src=https://thoaitrands.github.io/js/feather.min.js></script>
+<link href=https://thoaitrands.github.io/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://thoaitrands.github.io/css/main.40ca3a860425083862b7ebd55447caec5c4384573f0cb098b8d06a91e8dace2e.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://thoaitrands.github.io/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled></head><body><div class=content><header><div class=main><a href=https://thoaitrands.github.io/>Devopsbasic</a></div><nav><a href=/>Home</a>
+<a href=/posts>All posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <a id=dark-mode-toggle onclick=toggleTheme() href></a>
+<script src=https://thoaitrands.github.io/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Git rebase vs git merge ❓❓</h1><div class=meta>Posted on Aug 28, 2022</div></div><section class=body><h2 id=git-merge>Git merge</h2><pre><code>Beta                   `B1` ------------------------&gt; `B2`
+                     /            
+                    /
+Main: `C1` ---&gt; `C2` ----------&gt; `C3` ---&gt; `C4`
+</code></pre><p>👉👉👉 <code>C1</code> &mdash;><code>C2</code> &mdash;><code>B1</code> &mdash;><code>C3</code>&mdash;> <code>C4</code> &mdash;><code>B2</code></p><pre><code>🐵 Nếu chúng ta merge `Beta` branch vào `main` branch.
+
+Sau khi merged, thì `commit history` sẽ được sắp xếp dựa vào thời gian của các commits.
+
+👉 B1 được commit trước C3 và C4
+👉 B2 commit sau C3 và C4
+
+`commit history` sau khi merged sẽ là 👉👉👉 B1 —&gt; C3 —&gt; C4 —&gt;B2
+</code></pre><h2 id=git-rebase>Git rebase</h2><pre><code>Beta                   `B1` ------------------------&gt; `B2`
+                     /            
+                    /
+Main: `C1` ---&gt; `C2` ----------&gt; `C3` ---&gt; `C4`
+</code></pre><p>👉👉👉 <code>C1</code> &mdash;> <code>C2</code> &mdash;><code>C3</code> &mdash;><code>C4</code>&mdash;> <code>B1</code> &mdash;><code>B2</code></p><pre><code>🐵 Đứng ở branch `beta` để rebase branch `main`:
+  👉 Lấy branch `main` làm cơ sở.
+  👉 Giữ thứ tự các commits của branch `main`, lấy tất cả các commits của branch `beta` đẩy lên đầu branch `main`
+`commit history` sau khi merged sẽ là 👉👉👉 C1 —&gt; C2 —&gt; C3 —&gt;C4 -&gt; B1 -&gt;B2.
+</code></pre><h2 id=lợi-ích>Lợi ích:</h2><pre><code>👍 Sau khi 1 branch hoàn thành nên rebase main thay vì merge. 
+vì các commits của new branch sẽ không xen kẽ với commits của main —&gt; dễ check history.
+</code></pre></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/%20/tags/git_advanced>git_advanced</a></li></ul></nav></div></article><div><div id=disqus_thread></div><script>(function(){var e=document,t=e.createElement("script");t.src="https://devopsbasic.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)})()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by
+Disqus.</a></noscript></div></main><footer><div style=display:flex><script type=text/javascript src=https://storage.ko-fi.com/cdn/widget/Widget_2.js></script><script type=text/javascript>kofiwidget2.init("Support Me on Ko-fi","#29abe0","C1C4D2VFM"),kofiwidget2.draw()</script>
+<a class=soc href=https://github.com/thoaitrands title=GitHub><i data-feather=github></i></a></div><div class=footer-info>2022 © Thor | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer><script>feather.replace()</script></div></body></html>
