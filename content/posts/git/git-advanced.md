@@ -37,3 +37,14 @@ tags: [git_advanced]
 
     👍 Sau khi 1 branch hoàn thành nên rebase main thay vì merge. 
     vì các commits của new branch sẽ không xen kẽ với commits của main —> dễ check history.
+
+```goat
+      .               .                .               .--- 1          .-- 1     / 1
+     / \              |                |           .---+            .-+         +
+    /   \         .---+---.         .--+--.        |   '--- 2      |   '-- 2   / \ 2
+   +     +        |       |        |       |    ---+            ---+          +
+  / \   / \     .-+-.   .-+-.     .+.     .+.      |   .--- 3      |   .-- 3   \ / 3
+ /   \ /   \    |   |   |   |    |   |   |   |     '---+            '-+         +
+ 1   2 3   4    1   2   3   4    1   2   3   4         '--- 4          '-- 4     \ 4
+
+```
