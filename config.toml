@@ -4,6 +4,7 @@ title = "Devopsbasic"
 theme="archie"
 copyright = "© Thor"
 disqusShortname = 'tho_i_tr_n'
+diagram = true
 
  # Comment config
 [params.page.comment]
