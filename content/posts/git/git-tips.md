@@ -1,7 +1,7 @@
 ---
-title: "Some Git command You NEED 💯💯"
+title: "Một số lệnh git bạn CẦN biết 💯💯"
 date: 2022-08-28T12:13:32+05:30
-description: "The commands You need when you use GIT"
+description: "Các câu lệnh nằm lòng của dev"
 tags: [git_advanced]
 ---
 

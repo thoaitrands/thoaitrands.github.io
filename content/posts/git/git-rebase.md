@@ -1,8 +1,8 @@
 ---
-title: "Git rebase vs git merge ❓❓"
+title: "Sự khác biệt giữa `git rebase` và `git merge` ❓❓"
 date: 2022-08-28T12:13:32+05:30
-description: "Git is easy to learn...."
-tags: [git_advanced]
+description: "Tưởng dễ mà không dễ ..."
+tags: [git, git_advanced]
 ---
 
 ## Git merge
