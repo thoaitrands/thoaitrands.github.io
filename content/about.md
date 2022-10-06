@@ -31,3 +31,5 @@ Hi, I'm mr.Thor 😊
     - ⭐️ Docker, Kubernetes
     - ⭐️ Azure, AWS
     - ⭐️ Java, Python, Shell-script, Groovy
+
+![My imageg](/images/thor_logo.jpeg)
