@@ -20,17 +20,20 @@ tags: [git_basic]
 🏀 ***Local repository***:
 ```
     là repository bố trí trên máy của bản thân mình, dành cho một người dùng sử dụng.
+    Sau khi bạn gõ `git commit` thì các thay đổi sẽ lưu tại đây.
 ```
 
 🏀 ***Staging Area / Index***:
 ```
-    là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể `commit`.
+    là nơi lưu trữ các thay đổi trước khi commit. 
+    Sau khi bạn gõ `git add` thì các thay đổi sẽ được lưu tại đây.
 ```
 
 🏀 ***Workspace***:
 ```
     Là nơi các developer làm việc trực tiếp với files.
 ```
+## 2️⃣ Trạng thái cơ bản của file trong git.
 
-### tobe continute.
+![My imageg](/images/stage_of_files.jpeg)
 
