@@ -43,10 +43,10 @@ And in new environment, we also installed `request` package.
 
 In this folder==first_pipenv, we can see the 2 files:
 
-1. **Pipfile**  
-
+1. **Pipfile**
     - It will be auto generated with command `pipenv   install`.
     - It will be auto input the `request` package.
+
     **Example**
 
         [[source]]
@@ -62,11 +62,12 @@ In this folder==first_pipenv, we can see the 2 files:
         [requires]
         python_version = "3.9"
 
-2. **Pipfile.lock**  
+2. **Pipfile.lock**
 
     - It will takes advantage of some great new security improvements in pip.
     - It will be generated with the sha256 hashes of each downloaded package.
     - They highly recommend approaching deployments with promoting projects from a development environment into production.
+
     **Example**
 
         {

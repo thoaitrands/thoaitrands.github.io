@@ -33,6 +33,8 @@ tags: [git, git_advanced]
 	  👉 Giữ thứ tự các commits của branch `main`, lấy tất cả các commits của branch `beta` đẩy lên đầu branch `main`
     `commit history` sau khi merged sẽ là 👉👉👉 C1 —> C2 —> C3 —>C4 -> B1 ->B2.
 
+Sẽ đem những commits (từng commit) bên nhánh `Beta` và áp dụng lại vào sau commit mới nhất của nhánh `Main`
+
 ## Lợi ích:
 
     👍 Sau khi 1 branch hoàn thành nên rebase main thay vì merge. 
