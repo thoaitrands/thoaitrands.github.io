@@ -1,13 +1,16 @@
 ---
-title: "Commands to check the Network ?"
+title: "Các câu lệnh cần biết trong network ?"
 date: 2022-06-06T12:13:32+05:30
 description: "Check your network configuration. Make sure the network in ..."
 tags: [network]
 ---
 
-### --nslookup-- from ***N***ame ***S***erver lookup
+### --nslookup-- (Name Server Lookup)
 
-is a tool for querying the ***Domain Name System (DNS)*** to obtain the mapping between domain name and IP address, or other DNS records.
+1. Tra cứu máy chủ, câu lệnh này cho phép người dùng lấy thông tin từ máy chủ DNS.
+    ```
+    nslookup <tên miền>
+    nslookup <địa chỉ IP>
 
     ❯ nslookup devopsbasic.info
     Server: 2001:ee0:26::26
@@ -16,3 +19,8 @@ is a tool for querying the ***Domain Name System (DNS)*** to obtain the mapping 
     Non-authoritative answer:
     Name: devopsbasic.info
     Address: 185.199.111.153
+    ```
+2. Bạn muốn kiểm tra xem request của bạn đã qua những đâu
+    ```
+    traceroute devopsbasic.blog
+    ```
