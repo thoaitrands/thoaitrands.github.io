@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "Devopsbasic"
 theme="archie"
 copyright = "© Thor"
-disqusShortname = 'tho_i_tr_n'
 diagram = true
 
 paginate = 5
@@ -13,14 +12,6 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
- # Comment config
-[params.page.comment]
-enable = true
-# Disqus comment config (https://disqus.com/)
-[params.page.comment.disqus]
-	enable = true
-	# Disqus shortname to use Disqus in posts
-	shortname = "devopsbasic"
 
 [params]
 	mode="toggle" # color-mode → light,dark,toggle or auto
