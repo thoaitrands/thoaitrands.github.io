@@ -26,3 +26,16 @@ Nhà cung cấp đám mây phân bổ tài nguyên máy theo yêu cầu, chăm s
     Tất nhiên, vì bạn đang sử dụng dịch vụ bên thứ 3.
 + `Khó debug`
     Vì sử dụng các bên thứ 3, nên các dịch vụ khó có sự thống nhất khi trace logs hoặc tìm hiểu nguyên nhân.
+
+## Khi nào nên sử dụng serverless ??
++ `Ứng dụng web và di động`  
+    Ứng dụng web và di động nhỏ, đơn giản, có lượng truy cập thập và tính linh động cao.
++ `Xử lý dữ liệu.`  
+    Sử dụng để xử lý các tác vụ xử lý dữ liệu như xử lý dữ liệu log, email, nhắn tin hoặc nhận dự liệu IoT.
++ `Xử lý hình ảnh và video`  
+    Xử lý và phân tích hình ảnh, phát hiện khuôn mặt hoặc đối tượng, xử lý video và biến đổi định dạng.
++ `Các dịch vụ back-end.`  
+    Xử lý thanh toán, xác thực người dùng, quản lý cơ sở dữ liệu hoặc các tác vụ đồng bộ hóa.
++ `Điều khiển IoT`  
+    Kiểm soát và điều khiển các thiệt bị IoT, đo lường nhiệt độ, ánh sáng, độ ẩm, và điểu khiển thiết bị từ xa.
+
