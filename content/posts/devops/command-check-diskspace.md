@@ -1,6 +1,6 @@
 ---
 title: "Cách kiểm tra dung lượng đĩa trong linux"
-date: 2022-11-05T12:13:32+05:30
+date: 2023-11-05T12:13:32+05:30
 description: "Hướng dẫn cách để kiểm tra các folders đã sử dụng bao nhiêu dung lượng ..."
 tags: [linux]
 ---
